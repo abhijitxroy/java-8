@@ -75,7 +75,7 @@ Method Reference(::)
 	        MethodReferenceInterface mri = MethodeReferenceDemo::method2;
 	        mri.method1();
 	    }
-	}
+		}
 
 
 Stream
