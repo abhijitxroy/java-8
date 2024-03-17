@@ -1,6 +1,8 @@
 # java-8
 
 Lambda
+------------------------------------------
+
 	- Anonymous Function
 	- Not having any name
 	- Not having any return type
@@ -8,19 +10,30 @@ Lambda
 	- Only applicable on Functional Interface 
  
 Lambda Vs Anonymous Inner Class
+------------------------------------------
+
 
 Functional interface
+------------------------------------------
 	- Only Single Abstract Method (SAM)
 	- Might have any number of default method
 	- Might have any number of static method
 
 Default Method
+------------------------------------------
+
 
 Static Method
+------------------------------------------
+
 
 Interface Vs Abstract class
+------------------------------------------
+
 
 Predefined FI (java.util.function)
+------------------------------------------
+
 
 	1. Predicate<T>
 	- To implement conditional check, we should go for Predicate
@@ -43,29 +56,31 @@ Predefined FI (java.util.function)
 
  
 Method Reference(::)
-	- Purpose: Already written method we can reuse (without writing any method) with the help of Method reference
-	- Both method should have the same argument type.
-	- Method name, return type, modifiers could be different
-	 Syntax - ClassName::methodName ( MethodeReferenceDemo::method2)
+------------------------------------------
+
+- Purpose: Already written method we can reuse (without writing any method) with the help of Method reference
+- Both method should have the same argument type.
+- Method name, return type, modifiers could be different
+ Syntax - ClassName::methodName ( MethodeReferenceDemo::method2)
 	
-public class MethodeReferenceDemo {
-    public static void method2(){
-        System.out.println("Abhijit");
-        System.out.println("Subhasree");
-        System.out.println("avu");
-        System.out.println("Som");
-    }
-    
-    public static void main(String[] args) {
-        MethodReferenceInterface mri = MethodeReferenceDemo::method2;
-        mri.method1();
-    }
-}
+		public class MethodeReferenceDemo {
+		    public static void method2(){
+		        System.out.println("Abhijit");
+		        System.out.println("Subhasree");
+		        System.out.println("avu");
+		        System.out.println("Som");
+		    }
+	    
+	    public static void main(String[] args) {
+	        MethodReferenceInterface mri = MethodeReferenceDemo::method2;
+	        mri.method1();
+	    }
+	}
 
 
 Stream
+------------------------------------------
 
-Stream :
 If we want to process bulk objects of collection then go for streams concept.
 Way to operate on collection in java 8 is Stream.
 Its a special iterator class that allows processing collections of objects in a functional manner.
@@ -122,6 +137,4 @@ Different ways of creating Stream object:
 		- When builder is used, the desired type should be additionally specified in the right part of the statement, 
 		otherwise the build() method will create an instance of the Stream<Object>
 		- Stream<String>namesStream = Stream.<String>builder().add("a").add("b")add("c").build();
-
-![image](https://github.com/abhijitxroy/java-8/assets/161963891/6004b2ac-f078-4109-8558-97cc84151a29)
 
