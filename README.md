@@ -1,4 +1,4 @@
-# Java-8
+![image](https://github.com/abhijitxroy/java-8/assets/161963891/411c4bb0-e215-4bfb-9977-071121ceda7f)# Java-8
 
 Lambda
 ------------------------------------------
@@ -137,4 +137,75 @@ Different ways of creating Stream object:
 	- When builder is used, the desired type should be additionally specified in the right part of the statement, 
 	otherwise the build() method will create an instance of the Stream<Object>
 	- Stream<String>namesStream = Stream.<String>builder().add("a").add("b")add("c").build();
+
+GroupBy Vs PartitionBy
+------------------------------------------
+- partitioningBy method will return a map whose key is always a Boolean value
+- In the case of groupingBy method, the key can be of any Object type
+
+Example:
+	public class GroupByVsPartitionBy {
+	
+		public static void main(String[] args) {
+			Personn p1 = new Personn("Kosa", 21);
+			Personn p2 = new Personn("Saosa", 21);
+			Personn p3 = new Personn("Tia", 22);
+			Personn p4 = new Personn("Komal", 22);
+			Personn p5 = new Personn("Kanan", 25);
+			Personn p6 = new Personn("Kanan", 25);
+			Personn p7 = new Personn("Tia", 22);
+			ArrayList<Personn> list = new ArrayList<>();
+			list.add(p1);
+			list.add(p2);
+			list.add(p3);
+			list.add(p4);
+			list.add(p5);
+			list.add(p6);
+			list.add(p7);
+	
+			// groupingBy
+	//		Map<Object, List<Personn>> list2 = list.stream().collect(Collectors.groupingBy(p -> p.getAge() == 22));
+	//		System.out.println("grouping by age -> " + list2);
+	
+			// partitioningBy
+	//		Map<Boolean, List<Personn>> list3  = list.stream().collect(Collectors.partitioningBy(p -> p.getAge() == 22));
+	//		System.out.println("partitioning by age -> " + list3);
+			
+	//		list.stream()
+	//		.collect(Collectors.groupingBy(Personn::getName, Collectors.counting()))
+	//		.entrySet()
+	//		.stream()
+	//		.filter(e -> e.getValue()>1)
+	//		.collect(Collectors.toSet()).forEach(System.out::println);
+			
+			Map<String, Long> map = list.stream().collect(Collectors.groupingBy(Personn::getName, Collectors.counting()));
+			//System.out.println(map);
+			map.entrySet().stream().map(e -> e).forEach(System.out::println);
+	
+		}
+	
+	}
+	
+	class Personn {
+		String name;
+		int age;
+	
+		Personn(String name, int age) {
+			this.name = name;
+			this.age = age;
+		}
+	
+		public String getName() {
+			return name;
+		}
+	
+		public int getAge() {
+			return age;
+		}
+	
+		public String toString() {
+			return this.name;
+		}
+	}
+
 
