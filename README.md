@@ -1,4 +1,4 @@
-![image](https://github.com/abhijitxroy/java-8/assets/161963891/411c4bb0-e215-4bfb-9977-071121ceda7f)# Java-8
+# Java-8
 
 Lambda
 ------------------------------------------
