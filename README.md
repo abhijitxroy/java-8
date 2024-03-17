@@ -6,6 +6,7 @@ Lambda
 	- Not having any return type
 	- Not having any modifiers
 	- Only applicable on Functional Interface 
+ 
 Lambda Vs Anonymous Inner Class
 
 Functional interface
@@ -20,6 +21,7 @@ Static Method
 Interface Vs Abstract class
 
 Predefined FI (java.util.function)
+
 	1. Predicate<T>
 	- To implement conditional check, we should go for Predicate
 	- SAM = boolean test(T t);
@@ -40,3 +42,22 @@ Predefined FI (java.util.function)
 	- SAM = R get()
 
  
+Method Reference(::)
+	- Purpose: Already written method we can reuse (without writing any method) with the help of Method reference
+	- Both method should have the same argument type.
+	- Method name, return type, modifiers could be different
+	 Syntax - ClassName::methodName ( MethodeReferenceDemo::method2)
+	
+public class MethodeReferenceDemo {
+    public static void method2(){
+        System.out.println("Abhijit");
+        System.out.println("Subhasree");
+        System.out.println("avu");
+        System.out.println("Som");
+    }
+    
+    public static void main(String[] args) {
+        MethodReferenceInterface mri = MethodeReferenceDemo::method2;
+        mri.method1();
+    }
+}
