@@ -100,7 +100,7 @@ If we want to perform operation on bulk objects in collection then we should go 
  
 We can get stream object by :
  
-Stream s = collectionObject.stream();
+	Stream s = collectionObject.stream();
 Once we get stream object we can process the object of collection.
 Processing of stream consists of 2 steps/ stages
 Configuration of stream
@@ -109,7 +109,7 @@ Configuration can be done by
 Map 
 Filter
  
-Stream s = collectionObject.stream().filter(i 🡪i % 2 ==0);
+	Stream s = collectionObject.stream().filter(i 🡪i % 2 ==0);
  
 What if we don’t want to filter out.
 We rather want to create new object against each existing stream object based on some function.
@@ -125,16 +125,16 @@ In filter, because of filtering, number of objects in filtered list is less than
 
 Different ways of creating Stream object:
 ------------------------------------------
-	1. Creating empty stream object which allowed string values only
-		- Stream<String> names = Stream.empty()
-	2. Creating stream object from collection Object
-		- Collection<String> names = Arrays.asList("Abhijit", "Som");
-		- Stream nameStream = names.stream();
-	3. Creating stream from Array
-		- String[] arr = new String[] {"a", "b", "c"};
-		- Stream<String> streamOfArray = Arrays.stream(arr);
-	4. We can create Stream object by using builder method
-		- When builder is used, the desired type should be additionally specified in the right part of the statement, 
-		otherwise the build() method will create an instance of the Stream<Object>
-		- Stream<String>namesStream = Stream.<String>builder().add("a").add("b")add("c").build();
+1. Creating empty stream object which allowed string values only
+	- Stream<String> names = Stream.empty()
+2. Creating stream object from collection Object
+	- Collection<String> names = Arrays.asList("Abhijit", "Som");
+	- Stream nameStream = names.stream();
+3. Creating stream from Array
+	- String[] arr = new String[] {"a", "b", "c"};
+	- Stream<String> streamOfArray = Arrays.stream(arr);
+4. We can create Stream object by using builder method
+	- When builder is used, the desired type should be additionally specified in the right part of the statement, 
+	otherwise the build() method will create an instance of the Stream<Object>
+	- Stream<String>namesStream = Stream.<String>builder().add("a").add("b")add("c").build();
 
