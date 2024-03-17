@@ -144,7 +144,8 @@ GroupBy Vs PartitionBy
 - In the case of groupingBy method, the key can be of any Object type
 
 Example:
-	public class GroupByVsPartitionBy {
+	
+ 	public class GroupByVsPartitionBy {
 	
 		public static void main(String[] args) {
 			Personn p1 = new Personn("Kosa", 21);
